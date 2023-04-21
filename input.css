@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind utilities;
+@tailwind components;
+
+
+@layer base{
+    
+}
+
+
+
+
+#hero{
+    background-image:url('../images/desktop/image-hero.jpg');
+    background-repeat:no-repeat;
+    background-size:cover;
+}
+
+
+/* Primary Button  */
+
+@layer components {
+    .btn{
+        @apply px-8 py-2 my-0 font-bold uppercase tracking-widest border-2 border-black font-alata hover:bg-black hover:text-white duration-200;
+    }
+    .item-container{
+        @apply flex flex-col justify-between w-full space-y-6 text-2xl mb-8 text-white uppercase md:flex-row md:space-y-0 md:space-x-8;
+    }
+    
+    .items{
+        @apply relative overflow-hidden md:w-1/4 hover:cursor-pointer;
+    }
+    
+    .desktop-image-props{
+        @apply hidden w-full duration-200 md:block group-hover:scale-110 ;
+    }
+    
+    .mobile-image-props{
+        @apply md:hidden duration-200;
+    }
+
+    .item-header{
+        @apply absolute bottom-4 px-6 duration-200 w-52 md:bottom-8 md:px-10 group-hover:scale-110 group-hover:text-black select-none;
+    }
+
+
+    .bg-image-gradient{
+        @apply absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b from-transparent to-gray-900 group-hover:from-gray-50 group-hover:to-white group-hover:opacity-70;
+    }
+}
+
+@media(max-width:576px){
+    #hero{
+        background-image:url('../images/mobile/image-hero.jpg');
+        background-repeat:no-repeat;
+        background-position:center;
+    }
+}
+
+
+
+
+
+
+/* Hamburger Menu */
+
+.hamburger{
+    cursor:pointer;
+    width:24px;
+    height:24px;
+    transition:all 0.5s;
+    position:relative;
+    z-index:50;
+
+}
+
+.hamburger-top,
+.hamburger-middle,
+.hamburger-bottom{
+    position:absolute;
+    width:24px;
+    height:2px;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background:#fff;
+    transform:rotate(0);
+    transition:all 0.25s;
+}
+
+
+.hamburger-middle{
+    transform:translateY(7px);
+}
+
+
+.hamburger-bottom{
+    transform:translateY(14px);
+}
+
+
+.open{
+    transform:rotate(90deg);
+
+}
+
+.open .hamburger-top {
+    transform:rotate(45deg) translateY(6px) translateX(6px);
+}
+
+.open .hamburger-bottom {
+    transform:rotate(-45deg) translateY(6px) translateX(-6px);
+}
+
+.open .hamburger-middle {
+    display:none;
+}
+
+
+
+
+.underlined{
+    position:absolute;
+    height:2px;
+    background:#fff;
+    bottom:5px;
+    left:7px;
+    width:35px;
+    transition:width 0.5s;
+   
+}
+
+
+
+
+
